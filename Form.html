@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethereum Builder Challenge DRC</title>
     <style>
+        /* Root Variables */
         :root {
             --primary-green: #00B67A;
             --primary-teal: #00B5B5;
             --primary-yellow: #FFF8E7;
             --primary-pink: #FFE5F9;
             --text-dark: #333;
+            --error-red: #e74c3c;
         }
         
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -24,20 +27,20 @@
             background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-pink) 100%);
             color: var(--text-dark);
             min-height: 100vh;
+            line-height: 1.6;
         }
 
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        /* Header Styles */
+        .header {
+            width: 100%;
+            position: relative;
+            height: 200px;
             background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .banner-container {
-            position: relative;
             width: 100%;
-            height: 300px;
+            height: 100%;
             overflow: hidden;
         }
 
@@ -49,16 +52,16 @@
 
         .logo-container {
             position: absolute;
-            left: 50%;
-            bottom: -50px;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 100px;
+            left: 40px;
+            top: 40px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             border: 4px solid white;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             background: white;
+            z-index: 10;
         }
 
         .logo {
@@ -67,35 +70,41 @@
             object-fit: cover;
         }
 
+        /* Progress Bar Styles */
         .progress-section {
-            padding: 70px 0 20px;
-            background: white;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            z-index: 100;
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-pink) 100%);
         }
 
         .progress-bar {
             display: flex;
-            justify-content: center;
-            gap: 60px;
-            max-width: 600px;
-            margin: 0 auto;
+            gap: 30px;
             position: relative;
+            margin: 0 auto;
         }
 
         .progress-bar::after {
             content: '';
             position: absolute;
             top: 50%;
-            left: 50px;
-            right: 50px;
+            left: 20px;
+            right: 20px;
             height: 2px;
-            background: #ddd;
+            background: rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
 
         .step {
             width: 40px;
             height: 40px;
-            background: #ddd;
+            background: rgba(255, 255, 255, 0.8);
             color: #666;
             display: flex;
             justify-content: center;
@@ -105,17 +114,20 @@
             position: relative;
             z-index: 2;
             transition: all 0.3s ease;
+            border: 2px solid #ddd;
         }
 
         .step.active {
             background: var(--primary-teal);
             color: white;
+            border-color: var(--primary-teal);
         }
 
+        /* Main Content Styles */
         .main-content {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0 20px 40px;
         }
 
         .section-title {
@@ -147,44 +159,220 @@
             border-radius: 10px;
         }
 
-        .form-group {
-            margin-bottom: 25px;
-        }
+        /* Enhanced Form Control Styles */
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: var(--text-dark);
-        }
+/* Enhanced Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="url"] {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid rgba(0, 181, 181, 0.2);
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
 
-        input[type="text"],
-        input[type="email"],
-        input[type="url"],
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus {
+    border-color: var(--primary-teal);
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 181, 181, 0.15);
+    transform: translateY(-1px);
+}
 
-        input:focus,
-        select:focus {
-            border-color: var(--primary-teal);
-            outline: none;
-        }
+/* Custom Select Dropdown */
+.select-wrapper {
+    position: relative;
+}
 
-        .form-page {
+select {
+    appearance: none;
+    width: 100%;
+    padding: 16px;
+    border: 2px solid rgba(0, 181, 181, 0.2);
+    border-radius: 12px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-teal);
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.select-wrapper:hover::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+select:focus {
+    border-color: var(--primary-teal);
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 181, 181, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Enhanced File Upload Area */
+.file-upload-container {
+    border: 2px dashed rgba(0, 181, 181, 0.4);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.file-upload-container:hover {
+    border-color: var(--primary-teal);
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 181, 181, 0.15);
+}
+
+.file-upload-icon {
+    font-size: 40px;
+    color: var(--primary-teal);
+    margin-bottom: 15px;
+}
+
+.file-upload-text {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.file-upload-container input[type="file"] {
+    display: none;
+}
+
+.selected-files {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    display: none;
+}
+
+.selected-files.show {
+    display: block;
+}
+
+/* Enhanced Button Styles */
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+button {
+    padding: 16px 40px;
+    border: none;
+    border-radius: 30px;
+    background: var(--primary-teal);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    min-width: 160px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 181, 181, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 182, 122, 0.25);
+}
+
+button.back {
+    background: transparent;
+    color: var(--primary-teal);
+    border: 2px solid var(--primary-teal);
+    box-shadow: none;
+}
+
+button.back:hover {
+    background: rgba(0, 181, 181, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Checkbox Style */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.checkbox-wrapper:hover {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 181, 181, 0.15);
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--primary-teal);
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked {
+    background: var(--primary-teal);
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+        /* Error Styles */
+        .error-message {
+            color: var(--error-red);
+            font-size: 14px;
+            margin-top: 5px;
             display: none;
-            animation: fadeIn 0.5s;
         }
 
-        .form-page.active {
+        .error-message.show {
             display: block;
         }
 
+        input.error,
+        select.error {
+            border-color: var(--error-red);
+        }
+
+        /* Button Styles */
         .button-group {
             display: flex;
             gap: 15px;
@@ -209,10 +397,13 @@
             transform: translateY(-2px);
         }
 
-        button.back {
+        button:disabled {
             background: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
         }
 
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -220,80 +411,394 @@
     </style>
 </head>
 <body>
-    <header class="sticky-header">
+    <header class="header">
         <div class="banner-container">
             <img src="assets/images/banner.png" class="banner" alt="Event Banner">
             <div class="logo-container">
                 <img src="assets/images/logo.png" class="logo" alt="Event Logo">
             </div>
         </div>
-        
-        <div class="progress-section">
-            <div class="progress-bar">
-                <div class="step active">1</div>
-                <div class="step">2</div>
-                <div class="step">3</div>
-            </div>
-        </div>
     </header>
 
-    <main class="main-content">
-        <h1 class="section-title">Application Form</h1>
-        <p class="intro-text">Join us in building the future of Ethereum. Complete this application form to participate in our challenge.</p>
-        
-        <h2 class="section-subtitle">About the Event</h2>
-        <p class="intro-text">The Ethereum Builder Challenge is a unique opportunity to showcase your skills and contribute to the Ethereum ecosystem.</p>
-        
-        <h2 class="section-subtitle">Timeline</h2>
-        <p class="intro-text">Applications are open from February 1st to March 15th, 2025. Selected participants will be notified by March 30th.</p>
-        
-        <p class="support-text">
-            Visit our website for more information or email abc-support@directed.dev for support and enquiries.
-        </p>
+    <div class="progress-section">
+        <div class="progress-bar">
+            <div class="step active">1</div>
+            <div class="step">2</div>
+            <div class="step">3</div>
+        </div>
+    </div>
 
+    <main class="main-content">
         <form id="multiStepForm">
+            <!-- Page 1: Introduction and Basic Info -->
             <div class="form-page active" id="page1">
+                <h1 class="section-title">Application Form</h1>
+                <p class="intro-text">Join us in building the future of Ethereum. Complete this application form to participate in our challenge.</p>
+                
+                <h2 class="section-subtitle">About the Event</h2>
+                <p class="intro-text">The Ethereum Builder Challenge is a unique opportunity to showcase your skills and contribute to the Ethereum ecosystem.</p>
+                
+                <h2 class="section-subtitle">Timeline</h2>
+                <p class="intro-text">Applications are open from February 1st to March 15th, 2025. Selected participants will be notified by March 30th.</p>
+                
+                <p class="support-text">
+                    Visit our website for more information or email abc-support@directed.dev for support and enquiries.
+                </p>
+
                 <div class="form-group">
                     <label for="fullName">Full Name:</label>
                     <input type="text" id="fullName" required>
+                    <div class="error-message">Please enter your full name</div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address:</label>
                     <input type="email" id="email" required>
+                    <div class="error-message">Please enter a valid email address</div>
                 </div>
                 <div class="form-group">
                     <label for="confirmEmail">Confirm Email:</label>
                     <input type="email" id="confirmEmail" required>
+                    <div class="error-message">Emails do not match</div>
                 </div>
                 <div class="button-group">
                     <button type="button" onclick="nextPage(2)">Next</button>
                 </div>
             </div>
 
-            <!-- Additional form pages here -->
-            <!-- ... Rest of your form content ... -->
+           <!-- Update the form pages with new elements -->
+
+<!-- Page 2 Updates -->
+<div class="form-page" id="page2">
+    <h2 class="section-title">Where will you attend?</h2>
+    <div class="form-group">
+        <label for="attendance">Select Location:</label>
+        <div class="select-wrapper">
+            <select id="attendance" required>
+                <option value="">Select an option</option>
+                <option value="primary">Primary Location</option>
+                <option value="satellite">Satellite Location</option>
+            </select>
+        </div>
+        <div class="error-message">Please select a location</div>
+    </div>
+    <div class="form-group">
+        <label for="community">Which Club/Community?</label>
+        <div class="select-wrapper">
+            <select id="community" required>
+                <option value="">Select an option</option>
+                <option value="communityA">Community A</option>
+                <option value="communityB">Community B</option>
+            </select>
+        </div>
+        <div class="error-message">Please select a community</div>
+    </div>
+    <div class="form-group">
+        <label for="github">GitHub Link:</label>
+        <input type="url" id="github" required placeholder="https://github.com/yourusername">
+        <div class="error-message">Please enter a valid GitHub URL</div>
+    </div>
+    <div class="button-group">
+        <button type="button" class="back" onclick="previousPage(1)">Back</button>
+        <button type="button" onclick="nextPage(3)">Next</button>
+    </div>
+</div>
+
+<!-- Page 3 Updates -->
+<div class="form-page" id="page3">
+    <h2 class="section-title">Complete the following tasks</h2>
+    <div class="form-group">
+        <label>Upload Required Documents:</label>
+        <div class="file-upload-container" onclick="document.getElementById('files').click()">
+            <div class="file-upload-icon">📁</div>
+            <div class="file-upload-text">
+                <p>Drag and drop your files here</p>
+                <p>or click to browse</p>
+            </div>
+            <input type="file" id="files" multiple required>
+        </div>
+        <div class="selected-files" id="selectedFiles">
+            <p>Selected files:</p>
+            <ul id="fileList"></ul>
+        </div>
+        <div class="error-message">Please upload at least one file</div>
+    </div>
+    <div class="form-group">
+        <div class="checkbox-wrapper">
+            <input type="checkbox" id="agreement" required>
+            <label for="agreement">I agree to the Code of Conduct & Privacy Policy</label>
+        </div>
+        <div class="error-message">You must agree to continue</div>
+    </div>
+    <div class="button-group">
+        <button type="button" class="back" onclick="previousPage(2)">Back</button>
+        <button type="submit">Submit Application</button>
+    </div>
+</div>
         </form>
     </main>
 
     <script>
         let currentPage = 1;
         
+        // Validation functions
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validateGithubUrl(url) {
+            return url.toLowerCase().startsWith('https://github.com/');
+        }
+
+        function showError(element, message) {
+            element.classList.add('error');
+            const errorDiv = element.nextElementSibling;
+            if (errorDiv && errorDiv.classList.contains('error-message')) {
+                errorDiv.textContent = message;
+                errorDiv.classList.add('show');
+            }
+        }
+
+        function clearError(element) {
+            element.classList.remove('error');
+            const errorDiv = element.nextElementSibling;
+            if (errorDiv && errorDiv.classList.contains('error-message')) {
+                errorDiv.classList.remove('show');
+            }
+        }
+
+        function validatePage(page) {
+            let isValid = true;
+
+            if (page === 1) {
+                const fullName = document.getElementById('fullName');
+                const email = document.getElementById('email');
+                const confirmEmail = document.getElementById('confirmEmail');
+
+                // Validate full name
+                if (!fullName.value.trim()) {
+                    showError(fullName, 'Please enter your full name');
+                    isValid = false;
+                } else {
+                    clearError(fullName);
+                }
+
+                // Validate email
+                if (!validateEmail(email.value)) {
+                    showError(email, 'Please enter a valid email address');
+                    isValid = false;
+                } else {
+                    clearError(email);
+                }
+
+                // Validate email confirmation
+                if (email.value !== confirmEmail.value) {
+                    showError(confirmEmail, 'Emails do not match');
+                    isValid = false;
+                } else if (confirmEmail.value.trim() === '') {
+                    showError(confirmEmail, 'Please confirm your email');
+                    isValid = false;
+                } else {
+                    clearError(confirmEmail);
+                }
+            }
+
+            if (page === 2) {
+                const attendance = document.getElementById('attendance');
+                const community = document.getElementById('community');
+                const github = document.getElementById('github');
+
+                // Validate attendance
+                if (!attendance.value) {
+                    showError(attendance, 'Please select a location');
+                    isValid = false;
+                } else {
+                    clearError(attendance);
+                }
+
+                // Validate community
+                if (!community.value) {
+                    showError(community, 'Please select a community');
+                    isValid = false;
+                } else {
+                    clearError(community);
+                }
+
+                // Validate GitHub URL
+                if (!github.value || !validateGithubUrl(github.value)) {
+                    showError(github, 'Please enter a valid GitHub URL');
+                    isValid = false;
+                } else {
+                    clearError(github);
+                }
+            }
+
+            if (page === 3) {
+                const files = document.getElementById('files');
+                const agreement = document.getElementById('agreement');
+
+                // Validate file upload
+                if (files.files.length === 0) {
+                    showError(files, 'Please upload at least one file');
+                    isValid = false;
+                } else {
+                    clearError(files);
+                }
+
+                // Validate agreement
+                if (!agreement.checked) {
+                    showError(agreement, 'You must agree to continue');
+                    isValid = false;} else {
+                    clearError(agreement);
+                }
+            }
+
+            return isValid;
+        }
+
+        // Navigation function
         function nextPage(page) {
-            document.getElementById(`page${currentPage}`).classList.remove('active');
-            document.getElementById(`page${page}`).classList.add('active');
-            document.querySelectorAll('.step')[currentPage - 1].classList.remove('active');
-            document.querySelectorAll('.step')[page - 1].classList.add('active');
-            currentPage = page;
+            if (validatePage(currentPage)) {
+                document.querySelector(`#page${currentPage}`).classList.remove('active');
+                document.querySelector(`#page${page}`).classList.add('active');
+                
+                // Update progress bar
+                document.querySelectorAll('.step').forEach((step, index) => {
+                    if (index + 1 <= page) {
+                        step.classList.add('active');
+                    } else {
+                        step.classList.remove('active');
+                    }
+                });
+
+                currentPage = page;
+            }
         }
 
-        function prevPage(page) {
-            nextPage(page);
-        }
-
+        // Form submission
         document.getElementById('multiStepForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            console.log('Form submitted successfully');
+            
+            if (validatePage(3)) {
+                // Here you would typically collect all form data and submit
+                const formData = new FormData();
+                
+                // Collect data from all fields
+                formData.append('fullName', document.getElementById('fullName').value);
+                formData.append('email', document.getElementById('email').value);
+                formData.append('attendance', document.getElementById('attendance').value);
+                formData.append('community', document.getElementById('community').value);
+                formData.append('github', document.getElementById('github').value);
+                
+                // Append files
+                const fileInput = document.getElementById('files');
+                for (let i = 0; i < fileInput.files.length; i++) {
+                    formData.append('files[]', fileInput.files[i]);
+                }
+                
+                // Add agreement status
+                formData.append('agreement', document.getElementById('agreement').checked);
+
+                // Here you would typically send the formData to your server
+                // For example:
+                /*
+                fetch('/submit-application', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle success
+                    console.log('Success:', data);
+                })
+                .catch(error => {
+                    // Handle error
+                    console.error('Error:', error);
+                });
+                */
+
+                // For now, just log the submission
+                console.log('Form submitted successfully!');
+                alert('Thank you for your application!');
+            }
         });
+        // Add these functions to your existing JavaScript
+
+function previousPage(page) {
+    document.querySelector(`#page${currentPage}`).classList.remove('active');
+    document.querySelector(`#page${page}`).classList.add('active');
+    
+    // Update progress bar
+    document.querySelectorAll('.step').forEach((step, index) => {
+        if (index + 1 <= page) {
+            step.classList.add('active');
+        } else {
+            step.classList.remove('active');
+        }
+    });
+
+    currentPage = page;
+}
+
+// File upload handling
+document.getElementById('files').addEventListener('change', function(e) {
+    const fileList = document.getElementById('fileList');
+    const selectedFiles = document.getElementById('selectedFiles');
+    
+    fileList.innerHTML = '';
+    
+    if (this.files.length > 0) {
+        selectedFiles.classList.add('show');
+        Array.from(this.files).forEach(file => {
+            const li = document.createElement('li');
+            li.textContent = file.name;
+            fileList.appendChild(li);
+        });
+    } else {
+        selectedFiles.classList.remove('show');
+    }
+});
+
+// Drag and drop handling
+const fileUploadContainer = document.querySelector('.file-upload-container');
+
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    fileUploadContainer.addEventListener(eventName, preventDefaults, false);
+});
+
+function preventDefaults (e) {
+    e.preventDefault();
+    e.stopPropagation();
+}
+
+['dragenter', 'dragover'].forEach(eventName => {
+    fileUploadContainer.addEventListener(eventName, highlight, false);
+});
+
+['dragleave', 'drop'].forEach(eventName => {
+    fileUploadContainer.addEventListener(eventName, unhighlight, false);
+});
+
+function highlight(e) {
+    fileUploadContainer.classList.add('highlight');
+}
+
+function unhighlight(e) {
+    fileUploadContainer.classList.remove('highlight');
+}
+
+fileUploadContainer.addEventListener('drop', handleDrop, false);
+
+function handleDrop(e) {
+    const dt = e.dataTransfer;
+    const files = dt.files;
+    document.getElementById('files').files = files;
+    
+    // Trigger the change event manually
+    const event = new Event('change');
+    document.getElementById('files').dispatchEvent(event);
+}
+
     </script>
 </body>
 </html>
