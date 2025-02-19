@@ -160,200 +160,200 @@
         }
 
         /* Enhanced Form Control Styles */
-.form-group {
-    margin-bottom: 30px;
-    position: relative;
-}
+        .form-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
 
-/* Enhanced Input Styles */
-input[type="text"],
-input[type="email"],
-input[type="url"] {
-    width: 100%;
-    padding: 16px;
-    border: 2px solid rgba(0, 181, 181, 0.2);
-    border-radius: 12px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
+        /* Enhanced Input Styles */
+        input[type="text"],
+        input[type="email"],
+        input[type="url"] {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid rgba(0, 181, 181, 0.2);
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus {
-    border-color: var(--primary-teal);
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 181, 181, 0.15);
-    transform: translateY(-1px);
-}
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus {
+            border-color: var(--primary-teal);
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 181, 181, 0.15);
+            transform: translateY(-1px);
+        }
 
-/* Custom Select Dropdown */
-.select-wrapper {
-    position: relative;
-}
+        /* Custom Select Dropdown */
+        .select-wrapper {
+            position: relative;
+        }
 
-select {
-    appearance: none;
-    width: 100%;
-    padding: 16px;
-    border: 2px solid rgba(0, 181, 181, 0.2);
-    border-radius: 12px;
-    font-size: 16px;
-    background: rgba(255, 255, 255, 0.9);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
+        select {
+            appearance: none;
+            width: 100%;
+            padding: 16px;
+            border: 2px solid rgba(0, 181, 181, 0.2);
+            border-radius: 12px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
 
-.select-wrapper::after {
-    content: '▼';
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--primary-teal);
-    pointer-events: none;
-    transition: transform 0.3s ease;
-}
+        .select-wrapper::after {
+            content: '▼';
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-teal);
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
 
-.select-wrapper:hover::after {
-    transform: translateY(-50%) rotate(180deg);
-}
+        .select-wrapper:hover::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
 
-select:focus {
-    border-color: var(--primary-teal);
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 181, 181, 0.15);
-    transform: translateY(-1px);
-}
+        select:focus {
+            border-color: var(--primary-teal);
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 181, 181, 0.15);
+            transform: translateY(-1px);
+        }
 
-/* Enhanced File Upload Area */
-.file-upload-container {
-    border: 2px dashed rgba(0, 181, 181, 0.4);
-    border-radius: 12px;
-    padding: 30px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
+        /* Enhanced File Upload Area */
+        .file-upload-container {
+            border: 2px dashed rgba(0, 181, 181, 0.4);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-.file-upload-container:hover {
-    border-color: var(--primary-teal);
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 181, 181, 0.15);
-}
+        .file-upload-container:hover {
+            border-color: var(--primary-teal);
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 181, 181, 0.15);
+        }
 
-.file-upload-icon {
-    font-size: 40px;
-    color: var(--primary-teal);
-    margin-bottom: 15px;
-}
+        .file-upload-icon {
+            font-size: 40px;
+            color: var(--primary-teal);
+            margin-bottom: 15px;
+        }
 
-.file-upload-text {
-    color: #666;
-    margin-bottom: 10px;
-}
+        .file-upload-text {
+            color: #666;
+            margin-bottom: 10px;
+        }
 
-.file-upload-container input[type="file"] {
-    display: none;
-}
+        .file-upload-container input[type="file"] {
+            display: none;
+        }
 
-.selected-files {
-    margin-top: 15px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    display: none;
-}
+        .selected-files {
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            display: none;
+        }
 
-.selected-files.show {
-    display: block;
-}
+        .selected-files.show {
+            display: block;
+        }
 
-/* Enhanced Button Styles */
-.button-group {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 40px;
-}
+        /* Enhanced Button Styles */
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
 
-button {
-    padding: 16px 40px;
-    border: none;
-    border-radius: 30px;
-    background: var(--primary-teal);
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 16px;
-    min-width: 160px;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(0, 181, 181, 0.2);
-    position: relative;
-    overflow: hidden;
-}
+        button {
+            padding: 16px 40px;
+            border: none;
+            border-radius: 30px;
+            background: var(--primary-teal);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            min-width: 160px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 181, 181, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
 
-button:hover {
-    background: var(--primary-green);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 182, 122, 0.25);
-}
+        button:hover {
+            background: var(--primary-green);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 182, 122, 0.25);
+        }
 
-button.back {
-    background: transparent;
-    color: var(--primary-teal);
-    border: 2px solid var(--primary-teal);
-    box-shadow: none;
-}
+        button.back {
+            background: transparent;
+            color: var(--primary-teal);
+            border: 2px solid var(--primary-teal);
+            box-shadow: none;
+        }
 
-button.back:hover {
-    background: rgba(0, 181, 181, 0.1);
-    transform: translateY(-2px);
-}
+        button.back:hover {
+            background: rgba(0, 181, 181, 0.1);
+            transform: translateY(-2px);
+        }
 
-/* Enhanced Checkbox Style */
-.checkbox-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 15px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease;
-}
+        /* Enhanced Checkbox Style */
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
 
-.checkbox-wrapper:hover {
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 181, 181, 0.15);
-}
+        .checkbox-wrapper:hover {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 181, 181, 0.15);
+        }
 
-.checkbox-wrapper input[type="checkbox"] {
-    appearance: none;
-    width: 24px;
-    height: 24px;
-    border: 2px solid var(--primary-teal);
-    border-radius: 6px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s ease;
-}
+        .checkbox-wrapper input[type="checkbox"] {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--primary-teal);
+            border-radius: 6px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
 
-.checkbox-wrapper input[type="checkbox"]:checked {
-    background: var(--primary-teal);
-}
+        .checkbox-wrapper input[type="checkbox"]:checked {
+            background: var(--primary-teal);
+        }
 
-.checkbox-wrapper input[type="checkbox"]:checked::after {
-    content: '✓';
-    position: absolute;
-    color: white;
-    font-size: 16px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+        .checkbox-wrapper input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
         /* Error Styles */
         .error-message {
@@ -407,6 +407,15 @@ button.back:hover {
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Multi-page form styles */
+        .form-page {
+            display: none; /* Hide all form pages by default */
+        }
+
+        .form-page.active {
+            display: block; /* Show the active form page */
         }
     </style>
 </head>
@@ -465,75 +474,73 @@ button.back:hover {
                 </div>
             </div>
 
-           <!-- Update the form pages with new elements -->
-
-<!-- Page 2 Updates -->
-<div class="form-page" id="page2">
-    <h2 class="section-title">Where will you attend?</h2>
-    <div class="form-group">
-        <label for="attendance">Select Location:</label>
-        <div class="select-wrapper">
-            <select id="attendance" required>
-                <option value="">Select an option</option>
-                <option value="primary">Primary Location</option>
-                <option value="satellite">Satellite Location</option>
-            </select>
-        </div>
-        <div class="error-message">Please select a location</div>
-    </div>
-    <div class="form-group">
-        <label for="community">Which Club/Community?</label>
-        <div class="select-wrapper">
-            <select id="community" required>
-                <option value="">Select an option</option>
-                <option value="communityA">Community A</option>
-                <option value="communityB">Community B</option>
-            </select>
-        </div>
-        <div class="error-message">Please select a community</div>
-    </div>
-    <div class="form-group">
-        <label for="github">GitHub Link:</label>
-        <input type="url" id="github" required placeholder="https://github.com/yourusername">
-        <div class="error-message">Please enter a valid GitHub URL</div>
-    </div>
-    <div class="button-group">
-        <button type="button" class="back" onclick="previousPage(1)">Back</button>
-        <button type="button" onclick="nextPage(3)">Next</button>
-    </div>
-</div>
-
-<!-- Page 3 Updates -->
-<div class="form-page" id="page3">
-    <h2 class="section-title">Complete the following tasks</h2>
-    <div class="form-group">
-        <label>Upload Required Documents:</label>
-        <div class="file-upload-container" onclick="document.getElementById('files').click()">
-            <div class="file-upload-icon">📁</div>
-            <div class="file-upload-text">
-                <p>Drag and drop your files here</p>
-                <p>or click to browse</p>
+            <!-- Page 2: Location and Community Info -->
+            <div class="form-page" id="page2">
+                <h2 class="section-title">Where will you attend?</h2>
+                <div class="form-group">
+                    <label for="attendance">Select Location:</label>
+                    <div class="select-wrapper">
+                        <select id="attendance" required>
+                            <option value="">Select an option</option>
+                            <option value="primary">Primary Location</option>
+                            <option value="satellite">Satellite Location</option>
+                        </select>
+                    </div>
+                    <div class="error-message">Please select a location</div>
+                </div>
+                <div class="form-group">
+                    <label for="community">Which Club/Community?</label>
+                    <div class="select-wrapper">
+                        <select id="community" required>
+                            <option value="">Select an option</option>
+                            <option value="communityA">Community A</option>
+                            <option value="communityB">Community B</option>
+                        </select>
+                    </div>
+                    <div class="error-message">Please select a community</div>
+                </div>
+                <div class="form-group">
+                    <label for="github">GitHub Link:</label>
+                    <input type="url" id="github" required placeholder="https://github.com/yourusername">
+                    <div class="error-message">Please enter a valid GitHub URL</div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="back" onclick="previousPage(1)">Back</button>
+                    <button type="button" onclick="nextPage(3)">Next</button>
+                </div>
             </div>
-            <input type="file" id="files" multiple required>
-        </div>
-        <div class="selected-files" id="selectedFiles">
-            <p>Selected files:</p>
-            <ul id="fileList"></ul>
-        </div>
-        <div class="error-message">Please upload at least one file</div>
-    </div>
-    <div class="form-group">
-        <div class="checkbox-wrapper">
-            <input type="checkbox" id="agreement" required>
-            <label for="agreement">I agree to the Code of Conduct & Privacy Policy</label>
-        </div>
-        <div class="error-message">You must agree to continue</div>
-    </div>
-    <div class="button-group">
-        <button type="button" class="back" onclick="previousPage(2)">Back</button>
-        <button type="submit">Submit Application</button>
-    </div>
-</div>
+
+            <!-- Page 3: Document Upload and Agreement -->
+            <div class="form-page" id="page3">
+                <h2 class="section-title">Complete the following tasks</h2>
+                <div class="form-group">
+                    <label>Upload Required Documents:</label>
+                    <div class="file-upload-container" onclick="document.getElementById('files').click()">
+                        <div class="file-upload-icon">📁</div>
+                        <div class="file-upload-text">
+                            <p>Drag and drop your files here</p>
+                            <p>or click to browse</p>
+                        </div>
+                        <input type="file" id="files" multiple required>
+                    </div>
+                    <div class="selected-files" id="selectedFiles">
+                        <p>Selected files:</p>
+                        <ul id="fileList"></ul>
+                    </div>
+                    <div class="error-message">Please upload at least one file</div>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="agreement" required>
+                        <label for="agreement">I agree to the Code of Conduct & Privacy Policy</label>
+                    </div>
+                    <div class="error-message">You must agree to continue</div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="back" onclick="previousPage(2)">Back</button>
+                    <button type="submit">Submit Application</button>
+                </div>
+            </div>
         </form>
     </main>
 
@@ -648,7 +655,8 @@ button.back:hover {
                 // Validate agreement
                 if (!agreement.checked) {
                     showError(agreement, 'You must agree to continue');
-                    isValid = false;} else {
+                    isValid = false;
+                } else {
                     clearError(agreement);
                 }
             }
@@ -673,6 +681,22 @@ button.back:hover {
 
                 currentPage = page;
             }
+        }
+
+        function previousPage(page) {
+            document.querySelector(`#page${currentPage}`).classList.remove('active');
+            document.querySelector(`#page${page}`).classList.add('active');
+            
+            // Update progress bar
+            document.querySelectorAll('.step').forEach((step, index) => {
+                if (index + 1 <= page) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+
+            currentPage = page;
         }
 
         // Form submission
@@ -722,83 +746,65 @@ button.back:hover {
                 alert('Thank you for your application!');
             }
         });
-        // Add these functions to your existing JavaScript
 
-function previousPage(page) {
-    document.querySelector(`#page${currentPage}`).classList.remove('active');
-    document.querySelector(`#page${page}`).classList.add('active');
-    
-    // Update progress bar
-    document.querySelectorAll('.step').forEach((step, index) => {
-        if (index + 1 <= page) {
-            step.classList.add('active');
-        } else {
-            step.classList.remove('active');
-        }
-    });
-
-    currentPage = page;
-}
-
-// File upload handling
-document.getElementById('files').addEventListener('change', function(e) {
-    const fileList = document.getElementById('fileList');
-    const selectedFiles = document.getElementById('selectedFiles');
-    
-    fileList.innerHTML = '';
-    
-    if (this.files.length > 0) {
-        selectedFiles.classList.add('show');
-        Array.from(this.files).forEach(file => {
-            const li = document.createElement('li');
-            li.textContent = file.name;
-            fileList.appendChild(li);
+        // File upload handling
+        document.getElementById('files').addEventListener('change', function(e) {
+            const fileList = document.getElementById('fileList');
+            const selectedFiles = document.getElementById('selectedFiles');
+            
+            fileList.innerHTML = '';
+            
+            if (this.files.length > 0) {
+                selectedFiles.classList.add('show');
+                Array.from(this.files).forEach(file => {
+                    const li = document.createElement('li');
+                    li.textContent = file.name;
+                    fileList.appendChild(li);
+                });
+            } else {
+                selectedFiles.classList.remove('show');
+            }
         });
-    } else {
-        selectedFiles.classList.remove('show');
-    }
-});
 
-// Drag and drop handling
-const fileUploadContainer = document.querySelector('.file-upload-container');
+        // Drag and drop handling
+        const fileUploadContainer = document.querySelector('.file-upload-container');
 
-['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-    fileUploadContainer.addEventListener(eventName, preventDefaults, false);
-});
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            fileUploadContainer.addEventListener(eventName, preventDefaults, false);
+        });
 
-function preventDefaults (e) {
-    e.preventDefault();
-    e.stopPropagation();
-}
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
 
-['dragenter', 'dragover'].forEach(eventName => {
-    fileUploadContainer.addEventListener(eventName, highlight, false);
-});
+        ['dragenter', 'dragover'].forEach(eventName => {
+            fileUploadContainer.addEventListener(eventName, highlight, false);
+        });
 
-['dragleave', 'drop'].forEach(eventName => {
-    fileUploadContainer.addEventListener(eventName, unhighlight, false);
-});
+        ['dragleave', 'drop'].forEach(eventName => {
+            fileUploadContainer.addEventListener(eventName, unhighlight, false);
+        });
 
-function highlight(e) {
-    fileUploadContainer.classList.add('highlight');
-}
+        function highlight(e) {
+            fileUploadContainer.classList.add('highlight');
+        }
 
-function unhighlight(e) {
-    fileUploadContainer.classList.remove('highlight');
-}
+        function unhighlight(e) {
+            fileUploadContainer.classList.remove('highlight');
+        }
 
-fileUploadContainer.addEventListener('drop', handleDrop, false);
+        fileUploadContainer.addEventListener('drop', handleDrop, false);
 
-function handleDrop(e) {
-    const dt = e.dataTransfer;
-    const files = dt.files;
-    document.getElementById('files').files = files;
-    
-    // Trigger the change event manually
-    const event = new Event('change');
-    document.getElementById('files').dispatchEvent(event);
-}
-
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            document.getElementById('files').files = files;
+            
+            // Trigger the change event manually
+            const event = new Event('change');
+            document.getElementById('files').dispatchEvent(event);
+        }
     </script>
 </body>
 </html>
