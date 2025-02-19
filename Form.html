@@ -700,52 +700,30 @@
         }
 
         // Form submission
-        document.getElementById('multiStepForm').addEventListener('submit', function(e) {
+       // Form submission
+    document.getElementById('multiStepForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            if (validatePage(3)) {
-                // Here you would typically collect all form data and submit
-                const formData = new FormData();
-                
-                // Collect data from all fields
-                formData.append('fullName', document.getElementById('fullName').value);
-                formData.append('email', document.getElementById('email').value);
-                formData.append('attendance', document.getElementById('attendance').value);
-                formData.append('community', document.getElementById('community').value);
-                formData.append('github', document.getElementById('github').value);
-                
-                // Append files
-                const fileInput = document.getElementById('files');
-                for (let i = 0; i < fileInput.files.length; i++) {
-                    formData.append('files[]', fileInput.files[i]);
-                }
-                
-                // Add agreement status
-                formData.append('agreement', document.getElementById('agreement').checked);
 
-                // Here you would typically send the formData to your server
-                // For example:
-                /*
-                fetch('/submit-application', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Handle success
-                    console.log('Success:', data);
-                })
-                .catch(error => {
-                    // Handle error
-                    console.error('Error:', error);
-                });
-                */
+          if (validatePage(3)) {
+           // Collect all form data
+             const formData = new FormData(this);
 
-                // For now, just log the submission
-                console.log('Form submitted successfully!');
-                alert('Thank you for your application!');
-            }
+           // Send the data to the PHP script
+              fetch('send-email.php', {
+                 method: 'POST',
+                 body: formData,
+            })
+           .then(response => response.text())
+           .then(data => {
+            console.log('Success:', data);
+            alert('Thank you for your application!');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
         });
+    }
+  });
 
         // File upload handling
         document.getElementById('files').addEventListener('change', function(e) {
