@@ -475,63 +475,78 @@
             </div>
 
             <!-- Page 2: Location and Community Info -->
-            <div class="form-page" id="page2">
-                <h2 class="section-title">Where will you attend?</h2>
-                <div class="form-group">
-                    <label for="attendance">Select Location:</label>
-                    <div class="select-wrapper">
-                        <select id="attendance" required>
-                            <option value="">Select an option</option>
-                            <option value="bas-uele">Bas-Uélé</option>
-                            <option value="equateur">Équateur</option>
-                            <option value="haut-lomami">Haut-Lomami</option>
-                            <option value="haut-uele">Haut-Uélé</option>
-                            <option value="ituri">Ituri</option>
-                            <option value="kasi">Kasaï</option>
-                            <option value="kasi-central">Kasaï Central</option>
-                            <option value="kasai-oriental">Kasaï Oriental</option>
-                            <option value="kinshasa">Kinshasa</option>
-                            <option value="kongo-central">Kongo Central</option>
-                            <option value="kwango">Kwango</option>
-                            <option value="kwilu">Kwilu</option>
-                            <option value="lomami">Lomami</option>
-                            <option value="lualaba">Lualaba</option>
-                            <option value="mai-ndombe">Mai-Ndombe</option>
-                            <option value="maniema">Maniema</option>
-                            <option value="mongala">Mongala</option>
-                            <option value="nord-kivu">Nord-Kivu</option>
-                            <option value="nord-ubangi">Nord-Ubangi</option>
-                            <option value="sankuru">Sankuru</option>
-                            <option value="sud-kivu">Sud-Kivu</option>
-                            <option value="sud-ubangi">Sud-Ubangi</option>
-                            <option value="tanganyika">Tanganyika</option>
-                            <option value="tshopo">Tshopo</option>
-                            <option value="tshuapa">Tshuapa</option>
-                        </select>
-                    </div>
-                    <div class="error-message">Please select a location</div>
-                </div>
-                <div class="form-group">
-                    <label for="community">Which Club/Community?</label>
-                    <div class="select-wrapper">
-                        <select id="community" required>
-                            <option value="">Select an option</option>
-                            <option value="communityA">Community A</option>
-                            <option value="communityB">Community B</option>
-                        </select>
-                    </div>
-                    <div class="error-message">Please select a community</div>
-                </div>
-                <div class="form-group">
-                    <label for="github">GitHub Link:</label>
-                    <input type="url" id="github" required placeholder="https://github.com/yourusername">
-                    <div class="error-message">Please enter a valid GitHub URL</div>
-                </div>
-                <div class="button-group">
-                    <button type="button" class="back" onclick="previousPage(1)">Back</button>
-                    <button type="button" onclick="nextPage(3)">Next</button>
-                </div>
-            </div>
+            <!-- Page 2: Location and Community Info -->
+<div class="form-page" id="page2">
+    <h2 class="section-title">Where will you attend?</h2>
+    <div class="form-group">
+        <label for="attendance">Select Province:</label>
+        <div class="select-wrapper">
+            <select id="attendance" required onchange="updateUniversities()">
+                <option value="">Select a province</option>
+                <option value="bas-uele">Bas-Uélé</option>
+                <option value="equateur">Équateur</option>
+                <option value="haut-lomami">Haut-Lomami</option>
+                <option value="haut-uele">Haut-Uélé</option>
+                <option value="ituri">Ituri</option>
+                <option value="kasi">Kasaï</option>
+                <option value="kasi-central">Kasaï Central</option>
+                <option value="kasai-oriental">Kasaï Oriental</option>
+                <option value="kinshasa">Kinshasa</option>
+                <option value="kongo-central">Kongo Central</option>
+                <option value="kwango">Kwango</option>
+                <option value="kwilu">Kwilu</option>
+                <option value="lomami">Lomami</option>
+                <option value="lualaba">Lualaba</option>
+                <option value="mai-ndombe">Mai-Ndombe</option>
+                <option value="maniema">Maniema</option>
+                <option value="mongala">Mongala</option>
+                <option value="nord-kivu">Nord-Kivu</option>
+                <option value="nord-ubangi">Nord-Ubangi</option>
+                <option value="sankuru">Sankuru</option>
+                <option value="sud-kivu">Sud-Kivu</option>
+                <option value="sud-ubangi">Sud-Ubangi</option>
+                <option value="tanganyika">Tanganyika</option>
+                <option value="tshopo">Tshopo</option>
+                <option value="tshuapa">Tshuapa</option>
+            </select>
+        </div>
+        <div class="error-message">Please select a province</div>
+    </div>
+
+    <div class="form-group">
+        <label for="university">Select University:</label>
+        <div class="select-wrapper">
+            <select id="university" required>
+                <option value="">Select a university</option>
+                <!-- Universities will be dynamically populated here -->
+            </select>
+        </div>
+        <div class="error-message">Please select a university</div>
+    </div>
+
+    <div class="form-group">
+        <label for="community">Which Club/Community?</label>
+        <div class="select-wrapper">
+            <select id="community" required>
+                <option value="">Select an option</option>
+                <option value="communityA">Community A</option>
+                <option value="communityB">Community B</option>
+            </select>
+        </div>
+        <div class="error-message">Please select a community</div>
+    </div>
+
+    <div class="form-group">
+        <label for="github">GitHub Link:</label>
+        <input type="url" id="github" required placeholder="https://github.com/yourusername">
+        <div class="error-message">Please enter a valid GitHub URL</div>
+    </div>
+
+    <div class="button-group">
+        <button type="button" class="back" onclick="previousPage(1)">Back</button>
+        <button type="button" onclick="nextPage(3)">Next</button>
+    </div>
+</div>
 
             <!-- Page 3: Document Upload and Agreement -->
             <div class="form-page" id="page3">
@@ -806,6 +821,65 @@
             const event = new Event('change');
             document.getElementById('files').dispatchEvent(event);
         }
+         // Define universities for each province
+    const universitiesByProvince = {
+        "bas-uele": ["University of Buta", "Institut Supérieur Pédagogique de Buta"],
+        "equateur": ["University of Mbandaka", "Institut Supérieur des Techniques Médicales de Mbandaka"],
+        "haut-lomami": ["University of Kamina", "Institut Supérieur Pédagogique de Kamina"],
+        "haut-uele": ["University of Isiro", "Institut Supérieur de Développement Rural d’Isiro"],
+        "ituri": ["University of Bunia", "Institut Supérieur des Techniques Médicales de Bunia"],
+        "kasi": ["University of Tshikapa", "Institut Supérieur Pédagogique de Tshikapa"],
+        "kasi-central": ["University of Kananga", "Institut Supérieur des Techniques Médicales de Kananga"],
+        "kasai-oriental": ["University of Mbuji-Mayi (UNIMB)", "Official University of Mbuji-Mayi (UOM)"],
+        "kinshasa": [
+            "University of Kinshasa (UNIKIN)",
+            "Protestant University of Congo (UPC)",
+            "National Pedagogical University (UPN)",
+            "Institut Supérieur des Techniques Appliquées (ISTA)"
+        ],
+        "kongo-central": ["University of Kongo", "Institut Supérieur Pédagogique de Matadi"],
+        "kwango": ["University of Kenge", "Institut Supérieur de Développement Rural de Kenge"],
+        "kwilu": ["University of Bandundu (UNIBAND)", "Institut Supérieur des Techniques Médicales de Bandundu"],
+        "lomami": ["University of Kabinda", "Institut Supérieur Pédagogique de Kabinda"],
+        "lualaba": ["University of Kolwezi", "Institut Supérieur des Mines et Géologie de Kolwezi"],
+        "mai-ndombe": ["University of Inongo", "Institut Supérieur Pédagogique de Inongo"],
+        "maniema": ["University of Kindu", "Institut Supérieur des Techniques Médicales de Kindu"],
+        "mongala": ["University of Lisala", "Institut Supérieur Pédagogique de Lisala"],
+        "nord-kivu": [
+            "University of Goma (UNIGOM)",
+            "Catholic University of Bukavu (UCB)",
+            "Official University of Bukavu (UOB)"
+        ],
+        "nord-ubangi": ["University of Gbadolite", "Institut Supérieur Pédagogique de Gbadolite"],
+        "sankuru": ["University of Lusambo", "Institut Supérieur des Techniques Médicales de Lusambo"],
+        "sud-kivu": ["University of Bukavu", "Institut Supérieur des Techniques Médicales de Bukavu"],
+        "sud-ubangi": ["University of Gemena", "Institut Supérieur Pédagogique de Gemena"],
+        "tanganyika": ["University of Kalemie", "Institut Supérieur des Techniques Médicales de Kalemie"],
+        "tshopo": ["University of Kisangani (UNIKIS)", "Institut Supérieur Pédagogique de Kisangani"],
+        "tshuapa": ["University of Boende", "Institut Supérieur Pédagogique de Boende"]
+    };
+
+    // Function to update universities dropdown
+    function updateUniversities() {
+        const provinceDropdown = document.getElementById("attendance");
+        const universityDropdown = document.getElementById("university");
+
+        // Clear previous options
+        universityDropdown.innerHTML = '<option value="">Select a university</option>';
+
+        // Get selected province
+        const selectedProvince = provinceDropdown.value;
+
+        // Populate universities for the selected province
+        if (selectedProvince && universitiesByProvince[selectedProvince]) {
+            universitiesByProvince[selectedProvince].forEach(university => {
+                const option = document.createElement("option");
+                option.value = university;
+                option.textContent = university;
+                universityDropdown.appendChild(option);
+            });
+        }
+    }
     </script>
 </body>
 </html>
