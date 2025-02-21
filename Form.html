@@ -144,6 +144,12 @@
             font-size: 1.5em;
         }
 
+        .section-subtitle2 {
+            
+            color: var(--primary-green);
+            font-size: 1.5em;
+        }
+
         .intro-text {
             text-align: center;
             margin: 20px 0;
@@ -441,20 +447,12 @@
         <form id="multiStepForm">
             <!-- Page 1: Introduction and Basic Info -->
             <div class="form-page active" id="page1">
-                <h1 class="section-title">Application Form</h1>
-                <p class="intro-text">Join us in building the future of Ethereum. Complete this application form to participate in our challenge.</p>
-                
-                <h2 class="section-subtitle">About the Event</h2>
-                <p class="intro-text">The Ethereum Builder Challenge is a unique opportunity to showcase your skills and contribute to the Ethereum ecosystem.</p>
-                
-                <h2 class="section-subtitle">Timeline</h2>
-                <p class="intro-text">Applications are open from February 1st to March 15th, 2025. Selected participants will be notified by March 30th.</p>
                 <h1 class="section-title">Défi des Bâtisseurs Ethereum en RDC</h1>
 
     <div class="intro-section">
-        <h2 class="section-subtitle">À Propos du Formulaire</h2>
+        
         <div class="content-block">
-            <h3>Rejoignez la Révolution Ethereum en RDC!</h3>
+            <h3 class="section-subtitle">Rejoignez la Révolution Ethereum en RDC!</h3>
             <p class="intro-text">
                 Le Défi des Bâtisseurs Ethereum en RDC est une opportunité unique pour les étudiants, développeurs et entrepreneurs congolais de plonger dans l'univers de la blockchain et de l'Ethereum. Ce formulaire est votre porte d'entrée pour participer à un programme éducatif et pratique qui vise à former une nouvelle génération de développeurs Web3 en République Démocratique du Congo.
             </p>
@@ -470,7 +468,7 @@
             </p>
 
             <h4 class="section-subtitle">Objectifs du Défi:</h4>
-            <ul>
+            <ul >
                 <li>Éducation: Offrir des formations pratiques sur Ethereum, les contrats intelligents et les DApps</li>
                 <li>Communauté: Créer des clubs Ethereum dans 130 universités à travers le pays</li>
                 <li>Innovation: Encourager les étudiants à développer des solutions blockchain pour résoudre des problèmes locaux</li>
@@ -497,51 +495,50 @@
     <div class="timeline-section">
         <h2 class="section-subtitle">Calendrier du Programme</h2>
         <div class="phase-block">
-            <h3>Phase 1: Introduction et Formation (Mois 1)</h3>
+            <h3 class="section-subtitle2">Phase 1: Introduction et Formation (Mois 1)</h3> <br>
             <p><strong>Objectif:</strong> Découvrir les bases d'Ethereum et des contrats intelligents</p>
             <p><strong>Activités:</strong> Ateliers interactifs, cours en ligne et sessions de mentorat</p>
-            <p><strong>Résultat:</strong> Compréhension des concepts fondamentaux de la blockchain</p>
+            
         </div>
 
-        <div class="phase-block">
-            <h3>Phase 2: Formation des Communautés (Mois 2-3)</h3>
+        <div class="phase-block"> <br>
+            <h3 class="section-subtitle2">Phase 2: Formation des Communautés (Mois 2-3)</h3> <br>
             <p><strong>Objectif:</strong> Créer des clubs Ethereum dans les universités</p>
             <p><strong>Activités:</strong> Formation pratique en Solidity, hackathons locaux et contribution à des projets open-source</p>
-            <p><strong>Résultat:</strong> 130 clubs Ethereum actifs dans les universités</p>
+           
         </div>
 
-        <div class="phase-block">
-            <h3>Phase 3: Développement de DApps (Mois 4-5)</h3>
+        <div class="phase-block"> <br>
+            <h3 class="section-subtitle2">Phase 3: Développement de DApps (Mois 4-5)</h3> <br>
             <p><strong>Objectif:</strong> Construire des applications blockchain pour résoudre des problèmes locaux</p>
             <p><strong>Activités:</strong> Mentorat, financement de projets et collaboration avec des experts Ethereum</p>
-            <p><strong>Résultat:</strong> 50+ prototypes de DApps fonctionnels</p>
+            
         </div>
 
-        <div class="phase-block">
-            <h3>Phase 4: Journée de Démonstration (Mois 6)</h3>
+        <div class="phase-block"> <br>
+            <h3 class="section-subtitle2">Phase 4: Journée de Démonstration (Mois 6)</h3> <br>
             <p><strong>Objectif:</strong> Présenter les meilleurs projets et célébrer les réalisations des participants</p>
             <p><strong>Activités:</strong> Événement public avec démonstrations de projets, remise de prix et opportunités de financement</p>
-            <p><strong>Résultat:</strong> Reconnaissance des talents locaux et création d'un réseau durable de développeurs Ethereum</p>
+           
         </div>
     </div>
                 <p class="support-text">
-                    Visit our website for more information or email abc-support@directed.dev for support and enquiries.
-                </p>
+                 Contactez danielkambale@ambassador.eth pour toute assistance et renseignement.                </p>
 
                 <div class="form-group">
-                    <label for="fullName">Full Name:</label>
+                    <label for="fullName">Nom Complet:</label>
                     <input type="text" id="fullName" required>
-                    <div class="error-message">Please enter your full name</div>
+                    <div class="error-message">Veuillez saisir votre nom complet</div>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email Address:</label>
+                    <label for="email">Address Email :</label>
                     <input type="email" id="email" required>
-                    <div class="error-message">Please enter a valid email address</div>
+                    <div class="error-message">Veuillez saisir votre email qui est valide</div>
                 </div>
                 <div class="form-group">
-                    <label for="confirmEmail">Confirm Email:</label>
+                    <label for="confirmEmail">Confirmer Email:</label>
                     <input type="email" id="confirmEmail" required>
-                    <div class="error-message">Emails do not match</div>
+                    <div class="error-message">Les adresses email ne correspondent pas</div>
                 </div>
                 <div class="button-group">
                     <button type="button" onclick="nextPage(2)">Next</button>
@@ -551,12 +548,12 @@
             <!-- Page 2: Location and Community Info -->
             <!-- Page 2: Location and Community Info -->
 <div class="form-page" id="page2">
-    <h2 class="section-title">Where will you attend?</h2>
+    <h2 class="section-title">À quel endroit participerez-vous ?</h2>
     <div class="form-group">
-        <label for="attendance">Select Province:</label>
+        <label for="attendance">Sélectione ta Province:</label>
         <div class="select-wrapper">
             <select id="attendance" required onchange="updateUniversities()">
-                <option value="">Select a province</option>
+                <option value="">Sélectione ta Province</option>
                 <option value="bas-uele">Bas-Uélé</option>
                 <option value="equateur">Équateur</option>
                 <option value="haut-lomami">Haut-Lomami</option>
@@ -584,36 +581,36 @@
                 <option value="tshuapa">Tshuapa</option>
             </select>
         </div>
-        <div class="error-message">Please select a province</div>
+        <div class="error-message"> hey! tu dois sélectionner ton université </div>
     </div>
 
     <div class="form-group">
-        <label for="university">Select University:</label>
+        <label for="university">Selectione Université:</label>
         <div class="select-wrapper">
             <select id="university" required>
-                <option value="">Select a university</option>
+                <option value="">Selectione ton  université</option>
                 <!-- Universities will be dynamically populated here -->
             </select>
         </div>
-        <div class="error-message">Please select a university</div>
+        <div class="error-message">hey! tu dois sélectionner ton université</div>
     </div>
 
     <div class="form-group">
-        <label for="community">Which Club/Community?</label>
+        <label for="community">Quelle Club/Community?</label>
         <div class="select-wrapper">
             <select id="community" required>
-                <option value="">Select an option</option>
-                <option value="communityA">Community A</option>
-                <option value="communityB">Community B</option>
+                <option value="">Sélectione an option</option>
+                <option value="communityA">je veux étudier en ligne </option>
+                <option value="communityB">je veux étudier en classe physique </option>
             </select>
         </div>
-        <div class="error-message">Please select a community</div>
+        <div class="error-message">hey! tu dois sélectionner une communité</div>
     </div>
 
     <div class="form-group">
-        <label for="github">GitHub Link:</label>
+        <label for="github">Ton lien GitHub :</label>
         <input type="url" id="github" required placeholder="https://github.com/yourusername">
-        <div class="error-message">Please enter a valid GitHub URL</div>
+        <div class="error-message">hey! tu dois entrée un lien GitHub valide</div>
     </div>
 
     <div class="button-group">
@@ -624,33 +621,47 @@
 
             <!-- Page 3: Document Upload and Agreement -->
             <div class="form-page" id="page3">
-                <h2 class="section-title">Complete the following tasks</h2>
-                <div class="form-group">
-                    <label>Upload Required Documents:</label>
+                <h2 class="section-title">Complétez les tâches suivantes</h2>
+                <div class="form-group"> <br>
+                    <label>Pour valider votre participation au CHALLENGE, merci d'effectuer les actions suivantes et de joindre une capture d'écran comme preuve de réalisation  </label>
+                    <label>
+                        Rejoignez notre communauté sur les réseaux sociaux et partagez l'aventure :
+                        <ul>
+                            <li>Suivez-nous sur nos plateformes sociales</li>
+                            <li>Partagez notre publication du CHALLENGE avec votre réseau</li>
+                            <li>Identifiez 3 personnes qui pourraient être intéressées</li>
+                            <li>Ajoutez le hashtag #ChallengeNomDuChallenge à votre partage</li>
+                            <br>
+                        </ul>
+                    </label>
+
                     <div class="file-upload-container" onclick="document.getElementById('files').click()">
                         <div class="file-upload-icon">📁</div>
                         <div class="file-upload-text">
-                            <p>Drag and drop your files here</p>
-                            <p>or click to browse</p>
+                            <p>Glissez et déposez vos fichiers ici,</p>
+                            <p> cliquez pour parcourir</p>
                         </div>
                         <input type="file" id="files" multiple required>
                     </div>
                     <div class="selected-files" id="selectedFiles">
-                        <p>Selected files:</p>
+                        <p>Fichiers sélectionnés :</p>
                         <ul id="fileList"></ul>
                     </div>
-                    <div class="error-message">Please upload at least one file</div>
+                    <div class="error-message">Veuillez télécharger au moins un fichier</div>
                 </div>
                 <div class="form-group">
                     <div class="checkbox-wrapper">
                         <input type="checkbox" id="agreement" required>
-                        <label for="agreement">I agree to the Code of Conduct & Privacy Policy</label>
+                        <label for="agreement">
+                            J'accepte le <a href="https://docs.google.com/document/d/12TB2IJ6d_YTR1aturXp3xFhNR5sOEWL9cZb2ErJa6sc/edit?usp=sharing" target="_blank">Code de Conduite</a> 
+                            et la <a href="https://docs.google.com/document/d/1q1bUaJBqF3k62P9dkFUoQMU-tDcae0JK66ohuzkh92I/edit?usp=sharing" target="_blank">Politique de Confidentialité</a>
+                        </label>
                     </div>
-                    <div class="error-message">You must agree to continue</div>
+                    <div class="error-message">Vous devez accepter pour continuer</div>
                 </div>
                 <div class="button-group">
                     <button type="button" class="back" onclick="previousPage(2)">Back</button>
-                    <button type="submit">Submit Application</button>
+                    <button type="submit">Envoyer la candidature</button>
                 </div>
             </div>
         </form>
